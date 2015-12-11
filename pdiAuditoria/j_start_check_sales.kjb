@@ -8,53 +8,9 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;04 19&#x3a;08&#x3a;51.797</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;12&#x2f;11 14&#x3a;30&#x3a;40.251</modified_date>
+  <modified_date>2015&#x2f;12&#x2f;11 15&#x3a;24&#x3a;10.040</modified_date>
     <parameters>
     </parameters>
-  <connection>
-    <name>ODBC_BI</name>
-    <server/>
-    <type>MSSQL</type>
-    <access>ODBC</access>
-    <database>ODBC_BI</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>ODBC_DW</name>
-    <server/>
-    <type>MSSQL</type>
-    <access>ODBC</access>
-    <database>ODBC_DW</database>
-    <port>1521</port>
-    <username/>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
     <slaveservers>
     </slaveservers>
 <job-log-table><connection/>
@@ -136,8 +92,8 @@
       <type>MAIL</type>
       <server>ASPMX.L.GOOGLE.COM</server>
       <port>25</port>
-      <destination>sustentacao&#x40;marche.com.br</destination>
-      <destinationCc>victor.rosa&#x40;marche.com.br marcelo.carvalho&#x40;marche.com.br</destinationCc>
+      <destination>victor.rosa&#x40;marche.com.br</destination>
+      <destinationCc>sustentacao&#x40;marche.com.br marcelo.carvalho&#x40;marche.com.br</destinationCc>
       <destinationBCc/>
       <replyto>bi&#x40;marche.com.br</replyto>
       <replytoname>BI Pentaho</replytoname>
