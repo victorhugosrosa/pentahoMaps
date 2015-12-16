@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;11 16&#x3a;03&#x3a;22.413</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;12&#x2f;15 09&#x3a;50&#x3a;38.038</modified_date>
+  <modified_date>2015&#x2f;12&#x2f;16 11&#x3a;12&#x3a;51.578</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -83,7 +83,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>368</xloc>
+      <xloc>608</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -92,8 +92,8 @@
       <type>MAIL</type>
       <server>ASPMX.L.GOOGLE.COM</server>
       <port>25</port>
-      <destination>victor.rosa&#x40;marche.com.br</destination>
-      <destinationCc/>
+      <destination>robon.chin&#x40;march.com.br adilson.dias&#x40;marche.com.br</destination>
+      <destinationCc>victor.rosa&#x40;marche.com.br</destinationCc>
       <destinationBCc/>
       <replyto>bi&#x40;marche.com.br</replyto>
       <replytoname>BI Pentaho</replytoname>
@@ -124,7 +124,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>544</xloc>
+      <xloc>1040</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -160,17 +160,63 @@
       <xloc>208</xloc>
       <yloc>64</yloc>
       </entry>
+    <entry>
+      <name>t_get_file_names</name>
+      <description/>
+      <type>TRANS</type>
+      <specification_method>filename</specification_method>
+      <trans_object_id/>
+      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiVendaEatalyU30D&#x5c;t_get_file_names.ktr</filename>
+      <transname/>
+      <arg_from_previous>N</arg_from_previous>
+      <params_from_previous>N</params_from_previous>
+      <exec_per_row>N</exec_per_row>
+      <clear_rows>N</clear_rows>
+      <clear_files>N</clear_files>
+      <set_logfile>N</set_logfile>
+      <logfile/>
+      <logext/>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <loglevel>Basic</loglevel>
+      <cluster>N</cluster>
+      <slave_server_name/>
+      <set_append_logfile>N</set_append_logfile>
+      <wait_until_finished>Y</wait_until_finished>
+      <follow_abort_remote>N</follow_abort_remote>
+      <create_parent_folder>N</create_parent_folder>
+      <logging_remote_work>N</logging_remote_work>
+      <parameters>        <pass_all_parameters>Y</pass_all_parameters>
+      </parameters>      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>816</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>Delete files</name>
+      <description/>
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>N</include_subfolders>
+      <fields>
+        <field>
+          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiEstoqueVmd&#x5c;MARCHE_ESTOQUE_VMD_&#x24;&#x7b;sql_today_date&#x7d;.zip</name>
+          <filemask/>
+        </field>
+        <field>
+          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiEstoqueVmd&#x5c;MARCHE_ESTOQUE_VMD_&#x24;&#x7b;sql_today_date&#x7d;.txt</name>
+          <filemask/>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>400</xloc>
+      <yloc>64</yloc>
+      </entry>
   </entries>
   <hops>
-    <hop>
-      <from>t_create_file</from>
-      <to>Mail with Excel Attached</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>N</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
     <hop>
       <from>START</from>
       <to>t_get_sql_dates</to>
@@ -182,7 +228,34 @@
     </hop>
     <hop>
       <from>t_get_sql_dates</from>
+      <to>Delete files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete files</from>
       <to>t_create_file</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_create_file</from>
+      <to>t_get_file_names</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_get_file_names</from>
+      <to>Mail with Excel Attached</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
