@@ -8,7 +8,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;04 19&#x3a;08&#x3a;51.797</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;12&#x2f;11 15&#x3a;51&#x3a;53.955</modified_date>
+  <modified_date>2015&#x2f;12&#x2f;16 11&#x3a;33&#x3a;21.520</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -83,7 +83,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
+      <xloc>512</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -124,7 +124,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>768</xloc>
+      <xloc>928</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -190,7 +190,29 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>528</xloc>
+      <xloc>688</xloc>
+      <yloc>64</yloc>
+      </entry>
+    <entry>
+      <name>Delete files</name>
+      <description/>
+      <type>DELETE_FILES</type>
+      <arg_from_previous>N</arg_from_previous>
+      <include_subfolders>N</include_subfolders>
+      <fields>
+        <field>
+          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiAuditoria&#x5c;MARCHE_CHECK_SALES_&#x24;&#x7b;sql_today_date&#x7d;.xls</name>
+          <filemask/>
+        </field>
+        <field>
+          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiAuditoria&#x5c;MARCHE_CHECK_SALES_&#x24;&#x7b;sql_today_date&#x7d;.txt</name>
+          <filemask/>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>352</xloc>
       <yloc>64</yloc>
       </entry>
   </entries>
@@ -205,15 +227,6 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>t_get_sql_dates</from>
-      <to>t_create_file</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
       <from>t_create_file</from>
       <to>t_check_file</to>
       <from_nr>0</from_nr>
@@ -225,6 +238,24 @@
     <hop>
       <from>t_check_file</from>
       <to>Mail with Excel Attached</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>t_get_sql_dates</from>
+      <to>Delete files</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete files</from>
+      <to>t_create_file</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
