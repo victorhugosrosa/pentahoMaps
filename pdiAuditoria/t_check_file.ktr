@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;07 16&#x3a;37&#x3a;41.043</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;12&#x2f;16 11&#x3a;33&#x3a;19.009</modified_date>
+  <modified_date>2015&#x2f;12&#x2f;16 11&#x3a;43&#x3a;20.952</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -77,7 +77,8 @@
   <order>
   <hop> <from>Get Files Rows Count</from><to>Switch &#x2f; Case</to><enabled>Y</enabled> </hop>
   <hop> <from>Switch &#x2f; Case</from><to>Abort</to><enabled>Y</enabled> </hop>
-  <hop> <from>Switch &#x2f; Case</from><to>Set files in result</to><enabled>Y</enabled> </hop>
+  <hop> <from>Switch &#x2f; Case</from><to>Get File Names</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get File Names</from><to>Set files in result</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Abort</name>
@@ -151,7 +152,7 @@
 <file_type>GENERAL</file_type>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>528</xloc>
+      <xloc>752</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
@@ -174,12 +175,51 @@
 <case_value_format/>
 <case_value_decimal/>
 <case_value_group/>
-<default_target_step>Set files in result</default_target_step>
+<default_target_step>Get File Names</default_target_step>
 <cases><case><value>0</value>
 <target_step>Abort</target_step>
 </case></cases>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>336</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get File Names</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <filename_Field/>
+    <wildcard_Field/>
+    <exclude_wildcard_Field/>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <limit>0</limit>
+    <file>
+      <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiAuditoria&#x5c;MARCHE_CHECK_SALES_&#x24;&#x7b;sql_today_date&#x7d;.xls</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
       <yloc>112</yloc>
       <draw>Y</draw>
       </GUI>
