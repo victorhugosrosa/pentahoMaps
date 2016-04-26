@@ -1,18 +1,14 @@
 <job>
-  <name>j_start_EntradaU5DsemVenda</name>
+  <name>j_start_ErroPrecoEataly</name>
     <description/>
     <extended_description/>
     <job_version/>
     <job_status>0</job_status>
-  <directory>&#x2f;pdiEntradaU5DsemVenda</directory>
+  <directory>&#x2f;pdiErroPrecoEataly</directory>
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;11 16&#x3a;03&#x3a;22.413</created_date>
   <modified_user>-</modified_user>
-<<<<<<< HEAD
-  <modified_date>2016&#x2f;03&#x2f;29 14&#x3a;49&#x3a;58.468</modified_date>
-=======
-  <modified_date>2016&#x2f;03&#x2f;29 13&#x3a;58&#x3a;07.792</modified_date>
->>>>>>> origin/master
+  <modified_date>2016&#x2f;04&#x2f;26 19&#x3a;54&#x3a;30.395</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -63,7 +59,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiEntradaU5DsemVenda&#x5c;t_create_file.ktr</filename>
+      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiErroPrecoEataly&#x5c;t_create_file.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -87,7 +83,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>608</xloc>
+      <xloc>528</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -96,20 +92,16 @@
       <type>MAIL</type>
       <server>ASPMX.L.GOOGLE.COM</server>
       <port>25</port>
-      <destination>victor.rosa&#x40;marche.com.br</destination>
-<<<<<<< HEAD
-      <destinationCc>reginaldo.back&#x40;marche.com.br</destinationCc>
-=======
-      <destinationCc/>
->>>>>>> origin/master
+      <destination>precos&#x40;marche.com.br automacao&#x40;marche.com.br cadastro&#x40;marche.com.br</destination>
+      <destinationCc>victor.rosa&#x40;marche.com.br</destinationCc>
       <destinationBCc/>
       <replyto>bi&#x40;marche.com.br</replyto>
       <replytoname>BI Pentaho</replytoname>
-      <subject>Entradas u5d sem Venda - &#x24;&#x7b;sql_today_date&#x7d;</subject>
+      <subject>Erro de Pre&#xe7;os EatalyR - &#x24;&#x7b;sql_today_date&#x7d;</subject>
       <include_date>N</include_date>
       <contact_person/>
       <contact_phone/>
-      <comment>Em anexo excel com&#x3a;&#xd;&#xa;&#xd;&#xa;Produtos que tiveram entrada nos ultimos 5 dias mas que ainda n&#xe3;o possuem venda na loja.&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;Esse e-mail contem informa&#xe7;&#xf5;es de entradas e vendas at&#xe9; o dia de hoje-1 no momento da gera&#xe7;&#xe3;o do mesmo.</comment>
+      <comment>Em anexo excel com&#x3a;&#xd;&#xa;&#xd;&#xa;Produtos com diverg&#xea;ncia de pre&#xe7;os entre Loja e Restaurante&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;Esse e-mail contem informa&#xe7;&#xf5;es de pre&#xe7;os do dia de hoje no momento da gera&#xe7;&#xe3;o do mesmo.</comment>
       <include_files>Y</include_files>
       <zip_files>N</zip_files>
       <zip_name/>
@@ -132,7 +124,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1040</xloc>
+      <xloc>1216</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -141,7 +133,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiEntradaU5DsemVenda&#x5c;t_get_sql_dates.ktr</filename>
+      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiErroPrecoEataly&#x5c;t_get_sql_dates.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -174,7 +166,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiEntradaU5DsemVenda&#x5c;t_get_file_names.ktr</filename>
+      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiErroPrecoEataly&#x5c;t_get_file_names.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -198,7 +190,7 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>816</xloc>
+      <xloc>784</xloc>
       <yloc>64</yloc>
       </entry>
     <entry>
@@ -209,14 +201,14 @@
       <include_subfolders>N</include_subfolders>
       <fields>
         <field>
-          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiEntradaU5DsemVenda&#x5c;EntradaU5DsemVenda_&#x24;&#x7b;sql_today_date&#x7d;.xls</name>
+          <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiErroPrecoEataly&#x5c;ErroPrecoEatalyR_&#x24;&#x7b;sql_today_date&#x7d;.xls</name>
           <filemask/>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>400</xloc>
+      <xloc>352</xloc>
       <yloc>64</yloc>
       </entry>
   </entries>
@@ -229,6 +221,15 @@
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>t_get_file_names</from>
+      <to>Mail with Excel Attached</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
     <hop>
       <from>t_get_sql_dates</from>
@@ -251,15 +252,6 @@
     <hop>
       <from>t_create_file</from>
       <to>t_get_file_names</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>t_get_file_names</from>
-      <to>Mail with Excel Attached</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>

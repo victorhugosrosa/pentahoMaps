@@ -1,12 +1,12 @@
 <transformation>
   <info>
-    <name>t_create_file</name>
+    <name>t_get_sql_dates</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;pdiEntradaU5DsemVenda</directory>
+    <directory>&#x2f;pdiEstoqueVmd</directory>
     <parameters>
     </parameters>
     <log>
@@ -66,13 +66,9 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2015&#x2f;12&#x2f;04 19&#x3a;09&#x3a;04.307</created_date>
+  <created_date>2013&#x2f;08&#x2f;15 10&#x3a;58&#x3a;57.021</created_date>
   <modified_user>-</modified_user>
-<<<<<<< HEAD
-  <modified_date>2016&#x2f;03&#x2f;29 15&#x3a;00&#x3a;33.418</modified_date>
-=======
-  <modified_date>2016&#x2f;03&#x2f;29 13&#x3a;55&#x3a;43.529</modified_date>
->>>>>>> origin/master
+  <modified_date>2015&#x2f;12&#x2f;11 16&#x3a;14&#x3a;09.312</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -91,24 +87,59 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>ODBC_BI</name>
+    <server/>
+    <type>MSSQL</type>
+    <access>ODBC</access>
+    <database>ODBC_BI</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>ODBC_DW</name>
+    <server/>
+    <type>MSSQL</type>
+    <access>ODBC</access>
+    <database>ODBC_DW</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
       <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
-  <hop> <from>Select Entrada U5D sem Venda</from><to>Microsoft Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input &#x28;WEEK&#x29;</from><to>Set Variables</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>Microsoft Excel Output</name>
-    <type>ExcelOutput</type>
+    <name>Set Variables</name>
+    <type>SetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -117,138 +148,99 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <header>Y</header>
-    <footer>N</footer>
-    <encoding/>
-    <append>N</append>
-    <add_to_result_filenames>Y</add_to_result_filenames>
-    <file>
-      <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiEntradaU5DsemVenda&#x5c;EntradaU5DsemVenda_&#x24;&#x7b;sql_today_date&#x7d;</name>
-      <extention>xls</extention>
-      <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
-      <split>N</split>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <sheetname>Sheet1</sheetname>
-      <autosizecolums>N</autosizecolums>
-      <nullisblank>N</nullisblank>
-      <protect_sheet>N</protect_sheet>
-      <password>Encrypted </password>
-      <splitevery>0</splitevery>
-      <usetempfiles>N</usetempfiles>
-      <tempdirectory/>
-      </file>
-    <template>
-      <enabled>N</enabled>
-      <append>N</append>
-      <filename>template.xls</filename>
-    </template>
     <fields>
       <field>
-        <name>NO_LOJA</name>
-        <type>String</type>
-        <format/>
-      </field>
+        <field_name>TODAY_YEAR</field_name>
+        <variable_name>sql_today_year</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>COD_PRODUTO</name>
-        <type>Integer</type>
-        <format>0</format>
-      </field>
+        <field_name>TODAY_WEEK</field_name>
+        <variable_name>sql_today_week</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>NO_PRODUTO</name>
-        <type>String</type>
-        <format/>
-      </field>
+        <field_name>WEEK_7</field_name>
+        <variable_name>sql_week_7</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-<<<<<<< HEAD
-        <name>ABC</name>
-        <type>String</type>
-        <format/>
-      </field>
+        <field_name>WEEK_14</field_name>
+        <variable_name>sql_week_14</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-=======
->>>>>>> origin/master
-        <name>NO_DEPARTAMENTO</name>
-        <type>String</type>
-        <format/>
-      </field>
+        <field_name>WEEK_21</field_name>
+        <variable_name>sql_week_21</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>NO_SECAO</name>
-        <type>String</type>
-        <format/>
-      </field>
+        <field_name>WEEK_28</field_name>
+        <variable_name>sql_week_28</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-<<<<<<< HEAD
-        <name>VLR_VENDA</name>
-        <type>BigNumber</type>
-        <format>&#x23;,&#x23;&#x23;0.00</format>
-      </field>
+        <field_name>YEAR_7</field_name>
+        <variable_name>sql_year_7</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>DATA_ULTIMA_VENDA</name>
-        <type>String</type>
-        <format/>
-=======
-        <name>DATA_ULTIMA_VENDA</name>
-        <type>String</type>
-        <format>dd&#x2f;mm&#x2f;yyyy</format>
->>>>>>> origin/master
-      </field>
+        <field_name>YEAR_14</field_name>
+        <variable_name>sql_year_14</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>DATA_ULTIMA_ENTRADA</name>
-        <type>String</type>
-<<<<<<< HEAD
-        <format/>
-=======
-        <format>dd&#x2f;mm&#x2f;yyyy</format>
->>>>>>> origin/master
-      </field>
+        <field_name>YEAR_21</field_name>
+        <variable_name>sql_year_21</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>VENDA_VS_ENTRADA</name>
-        <type>Integer</type>
-<<<<<<< HEAD
-        <format>&#x23;,&#x23;&#x23;0.00</format>
-=======
-        <format/>
->>>>>>> origin/master
-      </field>
+        <field_name>YEAR_28</field_name>
+        <variable_name>sql_year_28</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
       <field>
-        <name>QTD_ULTIMA_ENTRADA</name>
-        <type>String</type>
-        <format>&#x23;,&#x23;&#x23;0.00</format>
-      </field>
-    </fields>
-    <custom>
-    <header_font_name>arial</header_font_name>
-    <header_font_size>10</header_font_size>
-    <header_font_bold>N</header_font_bold>
-    <header_font_italic>N</header_font_italic>
-    <header_font_underline>no</header_font_underline>
-    <header_font_orientation>horizontal</header_font_orientation>
-    <header_font_color>black</header_font_color>
-    <header_background_color>none</header_background_color>
-    <header_row_height>255</header_row_height>
-    <header_alignment>left</header_alignment>
-    <header_image/>
-    <row_font_name>arial</row_font_name>
-    <row_font_size>10</row_font_size>
-    <row_font_color>black</row_font_color>
-    <row_background_color>none</row_background_color>
-      </custom>
+        <field_name>TODAY_DATE</field_name>
+        <variable_name>sql_today_date</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>TODAY_7DATE_SELECT</field_name>
+        <variable_name>select_today_7date</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
+      <field>
+        <field_name>TODAY_DATE_SELECT</field_name>
+        <variable_name>select_today_date</variable_name>
+        <variable_type>JVM</variable_type>
+        <default_value/>
+        </field>
+      </fields>
+    <use_formatting>Y</use_formatting>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
-      <yloc>80</yloc>
+      <xloc>247</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select Entrada U5D sem Venda</name>
+    <name>Table input &#x28;WEEK&#x29;</name>
     <type>TableInput</type>
-    <description>exec procedure</description>
+    <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
@@ -257,11 +249,7 @@
            <schema_name/>
            </partitioning>
     <connection>conn13</connection>
-<<<<<<< HEAD
-    <sql>SELECT&#xd;&#xa;	L.NO_LOJA&#xd;&#xa;	,LP.COD_PRODUTO&#xd;&#xa;	,CP.DESCRICAO AS NO_PRODUTO&#xd;&#xa;	,LP.CLASSIF_PRODUTO_LOJA AS ABC&#xd;&#xa;	,CP.NO_DEPARTAMENTO&#xd;&#xa;	,CP.NO_SECAO&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.VLR_VENDA&#x29; as VLR_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; AS DATA_ULTIMA_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; AS DATA_ULTIMA_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29;&#x29; AS VENDA_VS_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.QTD_ULTIMA_ENTRADA&#x29; AS QTD_ULTIMA_ENTRADA	&#xd;&#xa;FROM&#xd;&#xa;	BI.DBO.BI_LINHA_PRODUTOS AS LP&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_LOJA2 AS L&#xd;&#xa;		ON LP.COD_LOJA &#x3d; L.COD_LOJA&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;		ON LP.COD_PRODUTO &#x3d; CP.COD_PRODUTO&#xd;&#xa;	LEFT JOIN BI.DBO.&#x5b;COMPRAS_DEPARA_PRODUTO&#x5d; AS DEPARA &#xd;&#xa;		ON DEPARA.COD_PRODUTO_ORG &#x3d; CP.COD_PRODUTO&#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e;&#x3d; CONVERT&#x28;DATE,GETDATE&#x28;&#x29;-5&#x29;&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; &#x3c; CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29;&#xd;&#xa;	AND DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e; 5&#xd;&#xa;	--AND LP.COD_LOJA &#x3d; 7&#xd;&#xa;	AND LP.CLASSIF_PRODUTO_LOJA &#x3c;&#x3e; &#x27;Z&#x27;	&#xd;&#xa;	AND DEPARA.COD_PRODUTO_ORG IS NULL&#xd;&#xa;ORDER BY&#xd;&#xa;	LP.COD_LOJA&#xd;&#xa;	,LP.CLASSIF_PRODUTO_LOJA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; DESC</sql>
-=======
-    <sql>SELECT&#xd;&#xa;	L.NO_LOJA&#xd;&#xa;	,LP.COD_PRODUTO&#xd;&#xa;	,CP.DESCRICAO AS NO_PRODUTO&#xd;&#xa;	,CP.NO_DEPARTAMENTO&#xd;&#xa;	,CP.NO_SECAO&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; AS DATA_ULTIMA_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; AS DATA_ULTIMA_ENTRADA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; AS VENDA_VS_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.QTD_ULTIMA_ENTRADA&#x29; AS QTD_ULTIMA_ENTRADA	&#xd;&#xa;FROM&#xd;&#xa;	BI.DBO.BI_LINHA_PRODUTOS AS LP&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_LOJA2 AS L&#xd;&#xa;		ON LP.COD_LOJA &#x3d; L.COD_LOJA&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;		ON LP.COD_PRODUTO &#x3d; CP.COD_PRODUTO&#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e;&#x3d; CONVERT&#x28;DATE,GETDATE&#x28;&#x29;-5&#x29;&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; &#x3c; CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29;&#xd;&#xa;ORDER BY&#xd;&#xa;	LP.COD_LOJA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; DESC</sql>
->>>>>>> origin/master
+    <sql>SELECT&#xa;	YEAR&#x28;GETDATE&#x28;&#x29;&#x29; AS TODAY_YEAR,&#xa;	dbo.F_ISO_WEEK_OF_YEAR&#x28;GETDATE&#x28;&#x29;&#x29; AS TODAY_WEEK,&#xa;	dbo.F_ISO_WEEK_OF_YEAR&#x28;GETDATE&#x28;&#x29;-7&#x29; AS WEEK_7,&#xa;	YEAR&#x28;GETDATE&#x28;&#x29;-7&#x29; AS YEAR_7,&#xa;	dbo.F_ISO_WEEK_OF_YEAR&#x28;GETDATE&#x28;&#x29;-14&#x29; AS WEEK_14,&#xa;	YEAR&#x28;GETDATE&#x28;&#x29;-14&#x29; AS YEAR_14,&#xa;	dbo.F_ISO_WEEK_OF_YEAR&#x28;GETDATE&#x28;&#x29;-21&#x29; AS WEEK_21,&#xa;	YEAR&#x28;GETDATE&#x28;&#x29;-21&#x29; AS YEAR_21,&#xa;	dbo.F_ISO_WEEK_OF_YEAR&#x28;GETDATE&#x28;&#x29;-28&#x29; AS WEEK_28,&#xa;	YEAR&#x28;GETDATE&#x28;&#x29;-28&#x29; AS YEAR_28,&#xa;	CONVERT&#x28;VARCHAR,GETDATE&#x28;&#x29;,112&#x29; AS TODAY_DATE,&#xa;	&#x27;&#x27;&#x27;&#x27;&#x2b;CONVERT&#x28;VARCHAR,GETDATE&#x28;&#x29;,112&#x29;&#x2b;&#x27;&#x27;&#x27;&#x27; AS TODAY_DATE_SELECT,&#xa;	&#x27;&#x27;&#x27;&#x27;&#x2b;CONVERT&#x28;VARCHAR,GETDATE&#x28;&#x29;-7,112&#x29;&#x2b;&#x27;&#x27;&#x27;&#x27; AS TODAY_7DATE_SELECT</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -269,8 +257,8 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
-      <yloc>80</yloc>
+      <xloc>81</xloc>
+      <yloc>84</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

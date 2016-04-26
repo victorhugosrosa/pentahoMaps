@@ -6,7 +6,7 @@
     <trans_version/>
     <trans_type>Normal</trans_type>
     <trans_status>0</trans_status>
-    <directory>&#x2f;pdiEntradaU5DsemVenda</directory>
+    <directory>&#x2f;pdiErroPrecoEataly</directory>
     <parameters>
     </parameters>
     <log>
@@ -68,11 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;04 19&#x3a;09&#x3a;04.307</created_date>
   <modified_user>-</modified_user>
-<<<<<<< HEAD
-  <modified_date>2016&#x2f;03&#x2f;29 15&#x3a;00&#x3a;33.418</modified_date>
-=======
-  <modified_date>2016&#x2f;03&#x2f;29 13&#x3a;55&#x3a;43.529</modified_date>
->>>>>>> origin/master
+  <modified_date>2016&#x2f;04&#x2f;26 19&#x3a;49&#x3a;48.124</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -91,20 +87,11 @@
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>MSSQL_DOUBLE_DECIMAL_SEPARATOR</code><attribute>N</attribute></attribute>
       <attribute><code>PORT_NUMBER</code><attribute>1433</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>N</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
     </attributes>
   </connection>
   <order>
-  <hop> <from>Select Entrada U5D sem Venda</from><to>Microsoft Excel Output</to><enabled>Y</enabled> </hop>
+  <hop> <from>Erro EatalyR</from><to>Microsoft Excel Output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Microsoft Excel Output</name>
@@ -123,7 +110,7 @@
     <append>N</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiEntradaU5DsemVenda&#x5c;EntradaU5DsemVenda_&#x24;&#x7b;sql_today_date&#x7d;</name>
+      <name>C&#x3a;&#x5c;Pentaho&#x5c;pentahoFiles&#x5c;pdiErroPrecoEataly&#x5c;ErroPrecoEatalyR_&#x24;&#x7b;sql_today_date&#x7d;</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -133,7 +120,7 @@
       <SpecifyFormat>N</SpecifyFormat>
       <date_time_format/>
       <sheetname>Sheet1</sheetname>
-      <autosizecolums>N</autosizecolums>
+      <autosizecolums>Y</autosizecolums>
       <nullisblank>N</nullisblank>
       <protect_sheet>N</protect_sheet>
       <password>Encrypted </password>
@@ -144,80 +131,43 @@
     <template>
       <enabled>N</enabled>
       <append>N</append>
-      <filename>template.xls</filename>
+      <filename>C&#x3a;&#x5c;Pentaho&#x5c;pentahoMaps&#x5c;pdiVendaEatalyU30D&#x5c;venda_eataly_u30d_template.xlsx</filename>
     </template>
     <fields>
-      <field>
-        <name>NO_LOJA</name>
-        <type>String</type>
-        <format/>
-      </field>
       <field>
         <name>COD_PRODUTO</name>
         <type>Integer</type>
         <format>0</format>
       </field>
       <field>
-        <name>NO_PRODUTO</name>
+        <name>COD_PRODUTO_CHEF</name>
+        <type>String</type>
+        <format>0</format>
+      </field>
+      <field>
+        <name>DESCRICAO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-<<<<<<< HEAD
-        <name>ABC</name>
+        <name>ATIVO</name>
         <type>String</type>
         <format/>
       </field>
       <field>
-=======
->>>>>>> origin/master
-        <name>NO_DEPARTAMENTO</name>
+        <name>RESTAURANTE</name>
         <type>String</type>
-        <format/>
+        <format>0</format>
       </field>
       <field>
-        <name>NO_SECAO</name>
-        <type>String</type>
-        <format/>
-      </field>
-      <field>
-<<<<<<< HEAD
-        <name>VLR_VENDA</name>
+        <name>PV_RESTAURANTE</name>
         <type>BigNumber</type>
-        <format>&#x23;,&#x23;&#x23;0.00</format>
+        <format>&#x23;,&#x23;&#x23;0</format>
       </field>
       <field>
-        <name>DATA_ULTIMA_VENDA</name>
-        <type>String</type>
-        <format/>
-=======
-        <name>DATA_ULTIMA_VENDA</name>
-        <type>String</type>
-        <format>dd&#x2f;mm&#x2f;yyyy</format>
->>>>>>> origin/master
-      </field>
-      <field>
-        <name>DATA_ULTIMA_ENTRADA</name>
-        <type>String</type>
-<<<<<<< HEAD
-        <format/>
-=======
-        <format>dd&#x2f;mm&#x2f;yyyy</format>
->>>>>>> origin/master
-      </field>
-      <field>
-        <name>VENDA_VS_ENTRADA</name>
-        <type>Integer</type>
-<<<<<<< HEAD
-        <format>&#x23;,&#x23;&#x23;0.00</format>
-=======
-        <format/>
->>>>>>> origin/master
-      </field>
-      <field>
-        <name>QTD_ULTIMA_ENTRADA</name>
-        <type>String</type>
-        <format>&#x23;,&#x23;&#x23;0.00</format>
+        <name>PV_EATALY</name>
+        <type>BigNumber</type>
+        <format>&#x23;,&#x23;&#x23;0</format>
       </field>
     </fields>
     <custom>
@@ -239,14 +189,14 @@
       </custom>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>368</xloc>
+      <xloc>304</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select Entrada U5D sem Venda</name>
+    <name>Erro EatalyR</name>
     <type>TableInput</type>
     <description>exec procedure</description>
     <distribute>Y</distribute>
@@ -257,11 +207,7 @@
            <schema_name/>
            </partitioning>
     <connection>conn13</connection>
-<<<<<<< HEAD
-    <sql>SELECT&#xd;&#xa;	L.NO_LOJA&#xd;&#xa;	,LP.COD_PRODUTO&#xd;&#xa;	,CP.DESCRICAO AS NO_PRODUTO&#xd;&#xa;	,LP.CLASSIF_PRODUTO_LOJA AS ABC&#xd;&#xa;	,CP.NO_DEPARTAMENTO&#xd;&#xa;	,CP.NO_SECAO&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.VLR_VENDA&#x29; as VLR_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; AS DATA_ULTIMA_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; AS DATA_ULTIMA_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29;&#x29; AS VENDA_VS_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.QTD_ULTIMA_ENTRADA&#x29; AS QTD_ULTIMA_ENTRADA	&#xd;&#xa;FROM&#xd;&#xa;	BI.DBO.BI_LINHA_PRODUTOS AS LP&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_LOJA2 AS L&#xd;&#xa;		ON LP.COD_LOJA &#x3d; L.COD_LOJA&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;		ON LP.COD_PRODUTO &#x3d; CP.COD_PRODUTO&#xd;&#xa;	LEFT JOIN BI.DBO.&#x5b;COMPRAS_DEPARA_PRODUTO&#x5d; AS DEPARA &#xd;&#xa;		ON DEPARA.COD_PRODUTO_ORG &#x3d; CP.COD_PRODUTO&#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e;&#x3d; CONVERT&#x28;DATE,GETDATE&#x28;&#x29;-5&#x29;&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; &#x3c; CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29;&#xd;&#xa;	AND DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e; 5&#xd;&#xa;	--AND LP.COD_LOJA &#x3d; 7&#xd;&#xa;	AND LP.CLASSIF_PRODUTO_LOJA &#x3c;&#x3e; &#x27;Z&#x27;	&#xd;&#xa;	AND DEPARA.COD_PRODUTO_ORG IS NULL&#xd;&#xa;ORDER BY&#xd;&#xa;	LP.COD_LOJA&#xd;&#xa;	,LP.CLASSIF_PRODUTO_LOJA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; DESC</sql>
-=======
-    <sql>SELECT&#xd;&#xa;	L.NO_LOJA&#xd;&#xa;	,LP.COD_PRODUTO&#xd;&#xa;	,CP.DESCRICAO AS NO_PRODUTO&#xd;&#xa;	,CP.NO_DEPARTAMENTO&#xd;&#xa;	,CP.NO_SECAO&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; AS DATA_ULTIMA_VENDA&#xd;&#xa;	,CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; AS DATA_ULTIMA_ENTRADA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; AS VENDA_VS_ENTRADA&#xd;&#xa;	,BI.dbo.fn_FormataVlr_Excel&#x28;LP.QTD_ULTIMA_ENTRADA&#x29; AS QTD_ULTIMA_ENTRADA	&#xd;&#xa;FROM&#xd;&#xa;	BI.DBO.BI_LINHA_PRODUTOS AS LP&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_LOJA2 AS L&#xd;&#xa;		ON LP.COD_LOJA &#x3d; L.COD_LOJA&#xd;&#xa;	INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;		ON LP.COD_PRODUTO &#x3d; CP.COD_PRODUTO&#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29; &#x3e;&#x3d; CONVERT&#x28;DATE,GETDATE&#x28;&#x29;-5&#x29;&#xd;&#xa;	AND CONVERT&#x28;DATE,LP.DATA_ULTIMA_VENDA&#x29; &#x3c; CONVERT&#x28;DATE,LP.DATA_ULTIMA_ENTRADA&#x29;&#xd;&#xa;ORDER BY&#xd;&#xa;	LP.COD_LOJA&#xd;&#xa;	,DATEDIFF&#x28;D,LP.DATA_ULTIMA_VENDA,LP.DATA_ULTIMA_ENTRADA&#x29; DESC</sql>
->>>>>>> origin/master
+    <sql>SELECT&#xd;&#xa;	CHEF.plu_marche AS COD_PRODUTO&#xd;&#xa;	,CHEF.cod_chef AS COD_PRODUTO_CHEF&#xd;&#xa;	,CHEF.DESCRICAO&#xd;&#xa;	,CHEF.ATIVO&#xd;&#xa;	,CHEF.RESTAURANTE&#xd;&#xa;	,CHEF.PRECO AS PV_RESTAURANTE&#xd;&#xa;	,LP_29.VLR_VENDA AS PV_EATALY&#xd;&#xa;	--,LP_33.VLR_VENDA AS PV_EATALYR&#xd;&#xa;FROM&#xd;&#xa;	&#x5b;BI&#x5d;.&#x5b;dbo&#x5d;.&#x5b;VW_PRODUTOS_CHEFFSOLUTION_DEPARA&#x5d; AS CHEF&#xd;&#xa;	LEFT JOIN BI.dbo.BI_LINHA_PRODUTOS AS LP_29&#xd;&#xa;		ON 1&#x3d;1&#xd;&#xa;		AND CHEF.plu_marche &#x3d; LP_29.COD_PRODUTO&#xd;&#xa;		AND LP_29.COD_LOJA &#x3d; 29&#xd;&#xa;	--LEFT JOIN BI.dbo.BI_LINHA_PRODUTOS AS LP_33&#xd;&#xa;	--	ON 1&#x3d;1&#xd;&#xa;	--	AND CHEF.plu_marche &#x3d; LP_33.COD_PRODUTO&#xd;&#xa;	--	AND LP_33.COD_LOJA &#x3d; 33&#xd;&#xa;WHERE 1&#x3d;1&#xd;&#xa;	AND	CHEF.PRECO &#x3c;&#x3e; LP_29.VLR_VENDA&#xd;&#xa;	OR LP_29.VLR_VENDA IS NULL</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -269,7 +215,7 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>128</xloc>
+      <xloc>112</xloc>
       <yloc>80</yloc>
       <draw>Y</draw>
       </GUI>
