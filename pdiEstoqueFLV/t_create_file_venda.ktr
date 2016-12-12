@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;04 19&#x3a;09&#x3a;04.307</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2016&#x2f;12&#x2f;06 17&#x3a;34&#x3a;48.830</modified_date>
+  <modified_date>2016&#x2f;12&#x2f;12 09&#x3a;10&#x3a;26.035</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -93,32 +93,6 @@
   <order>
   <hop> <from>venda</from><to>Text file output</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>venda</name>
-    <type>TableInput</type>
-    <description>exec procedure</description>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conn13</connection>
-    <sql>SELECT&#xd;&#xa;		VP.COD_LOJA&#xd;&#xa;		,CONVERT&#x28;DATE,VP.DATA&#x29; AS DATA&#xd;&#xa;		,VP.COD_PRODUTO&#xd;&#xa;		,CP.DESCRICAO&#xd;&#xa;		,CP.MARCHE_SHELFLIFE&#xd;&#xa;		,sum&#x28;VP.QTDE_PRODUTO&#x29; as QTD_VENDA&#xd;&#xa;	FROM &#xd;&#xa;		BI.dbo.BI_VENDA_PRODUTO AS VP&#xd;&#xa;		INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;				ON VP.COD_PRODUTO &#x3d; CP.COD_PRODUTO				&#xd;&#xa;	WHERE 1&#x3d;1		&#xd;&#xa;		AND CP.COD_DEPARTAMENTO &#x3d; 4&#xd;&#xa;		AND VP.COD_LOJA in &#x28;3,9&#x29;&#xd;&#xa;		AND CONVERT&#x28;DATE,VP.DATA&#x29; &#x3e; CONVERT&#x28;DATE,DATEADD&#x28;D,CP.MARCHE_SHELFLIFE&#x2a;-1,GETDATE&#x28;&#x29;-1&#x29;&#x29;&#xd;&#xa;		--AND VP.COD_PRODUTO &#x3d; 4886&#xd;&#xa;		--AND VP.COD_PRODUTO IN &#x28;4886,13512,13505&#x29;	&#xd;&#xa;	GROUP BY&#xd;&#xa;		VP.COD_LOJA&#xd;&#xa;		,CONVERT&#x28;DATE,VP.DATA&#x29;&#xd;&#xa;		,VP.COD_PRODUTO&#xd;&#xa;		,CP.DESCRICAO&#xd;&#xa;		,CP.MARCHE_SHELFLIFE</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>64</xloc>
-      <yloc>64</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Text file output</name>
     <type>TextFileOutput</type>
@@ -238,6 +212,32 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>256</xloc>
+      <yloc>64</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>venda</name>
+    <type>TableInput</type>
+    <description>exec procedure</description>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conn13</connection>
+    <sql>SELECT&#xd;&#xa;		VP.COD_LOJA&#xd;&#xa;		,CONVERT&#x28;DATE,VP.DATA&#x29; AS DATA&#xd;&#xa;		,VP.COD_PRODUTO&#xd;&#xa;		,CP.DESCRICAO&#xd;&#xa;		,CP.MARCHE_SHELFLIFE&#xd;&#xa;		,sum&#x28;VP.QTDE_PRODUTO&#x29; as QTD_VENDA&#xd;&#xa;	FROM &#xd;&#xa;		BI.dbo.BI_VENDA_PRODUTO AS VP&#xd;&#xa;		INNER JOIN BI.dbo.BI_CAD_PRODUTO AS CP&#xd;&#xa;				ON VP.COD_PRODUTO &#x3d; CP.COD_PRODUTO				&#xd;&#xa;	WHERE 1&#x3d;1		&#xd;&#xa;		AND CP.COD_DEPARTAMENTO &#x3d; 4&#xd;&#xa;		AND VP.COD_LOJA in &#x28;3,9&#x29;&#xd;&#xa;		AND CONVERT&#x28;DATE,VP.DATA&#x29; &#x3e;&#x3d; CONVERT&#x28;DATE,DATEADD&#x28;D,CP.MARCHE_SHELFLIFE&#x2a;-1,GETDATE&#x28;&#x29;-1&#x29;&#x29;&#xd;&#xa;		--AND VP.COD_PRODUTO &#x3d; 4886&#xd;&#xa;		--AND VP.COD_PRODUTO IN &#x28;4886,13512,13505&#x29;	&#xd;&#xa;	GROUP BY&#xd;&#xa;		VP.COD_LOJA&#xd;&#xa;		,CONVERT&#x28;DATE,VP.DATA&#x29;&#xd;&#xa;		,VP.COD_PRODUTO&#xd;&#xa;		,CP.DESCRICAO&#xd;&#xa;		,CP.MARCHE_SHELFLIFE</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>64</xloc>
       <yloc>64</yloc>
       <draw>Y</draw>
       </GUI>
