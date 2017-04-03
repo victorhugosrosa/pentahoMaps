@@ -68,7 +68,7 @@
   <created_user>-</created_user>
   <created_date>2015&#x2f;12&#x2f;04 19&#x3a;09&#x3a;04.307</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2015&#x2f;12&#x2f;16 11&#x3a;32&#x3a;11.824</modified_date>
+  <modified_date>2017&#x2f;04&#x2f;03 14&#x3a;18&#x3a;20.935</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -106,7 +106,7 @@
            <schema_name/>
            </partitioning>
     <connection>conn13</connection>
-    <sql>DECLARE &#x40;DATA_INI AS DATE &#x3d; GETDATE&#x28;&#x29;-10&#xd;&#xa;DECLARE &#x40;DATA_FIM AS DATE &#x3d; GETDATE&#x28;&#x29;-1&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;exec bi.dbo.BI_CHECK_SALES &#x40;DATA_INI, &#x40;DATA_FIM</sql>
+    <sql>DECLARE &#x40;DATA_INI AS DATE &#x3d; GETDATE&#x28;&#x29;-60&#xd;&#xa;DECLARE &#x40;DATA_FIM AS DATE &#x3d; GETDATE&#x28;&#x29;-1&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;exec bi.dbo.BI_CHECK_SALES &#x40;DATA_INI, &#x40;DATA_FIM</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
